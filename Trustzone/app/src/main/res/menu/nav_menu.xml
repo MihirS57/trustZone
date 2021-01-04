@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_note"
+        android:icon="@drawable/ic_action_note"
+        android:title="@string/menu_not"/>
+    <item
+        android:id="@+id/action_pass"
+        android:icon="@drawable/ic_action_pin"
+        android:title="@string/menu_pas"/>
+
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@drawable/ic_action_sett"
+        android:title="@string/menu_set"/>
+</menu>

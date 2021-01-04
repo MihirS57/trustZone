@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_centerHorizontal="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        tools:context=".AddUser">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="130dp"
+            android:text="@string/inst"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_ph_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editConfPass_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="30dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextAppearance="@style/CustomTextAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editRecovery"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/edit_ph_layout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="@string/hint_phone"
+                android:inputType="text"
+                android:textAlignment="textStart"
+
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                app:hintTextAppearance="@style/CustomTextAppearance">
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editConfPass_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editPass_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="30dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextAppearance="@style/CustomTextAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editConfPass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/edit_dob_layout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="@string/hint_confirm_newpass"
+                android:inputType="textPassword"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorDarkBlue"
+                android:textSize="20sp"
+                app:hintTextAppearance="@style/CustomTextAppearance" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editPass_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_name_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="30dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextAppearance="@style/CustomTextAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPass"
+
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/edit_name_layout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                app:hintTextAppearance="@style/CustomTextAppearance" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_name_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView12"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/colorBlack"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextAppearance="@style/CustomTextAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/edit_name_layout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="@string/hint_fullname"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorDarkBlue"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_secq_a_layout"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/colorDarkBlue"
+            android:text="@string/save_cont"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="275dp"
+            app:srcCompat="@drawable/ic_logo" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="143dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="143dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/privacy_note"
+            android:textAlignment="center"
+            android:textColor="@color/colorRed" />
+
+        <Spinner
+            android:id="@+id/spinner_secq"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/edit_ph_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="30dp"
+            android:entries="@array/sec_q" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_secq_a_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner_secq"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/colorBlack"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextAppearance="@style/CustomTextAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editsecq_a"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/edit_name_layout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="@string/sec_q_a"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorDarkBlue"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

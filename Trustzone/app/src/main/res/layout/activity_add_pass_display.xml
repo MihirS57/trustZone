@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:background="@color/colorAccent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        tools:context=".AddUser">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_cpass_layout"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_pass_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/colorBlack"
+            android:textColorHint="@color/colorOffWhite"
+            app:hintTextAppearance="@style/CustomTextAppearance"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorOffWhite">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editConfirmPass"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/register_head"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/colorBlack"
+                android:clickable="false"
+                android:hint="Confirm Password"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorDarkBlue"
+                android:textSize="20sp"
+
+                app:hintTextAppearance="@style/CustomTextAppearance" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_email_layout"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_label_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/colorBlack"
+            android:textColorHint="@color/colorOffWhite"
+            app:hintTextAppearance="@style/CustomTextAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editRecovery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/register_head"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/colorBlack"
+                android:clickable="false"
+                android:hint="Email Address"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorDarkBlue"
+                android:textSize="20sp"
+                app:hintTextAppearance="@style/CustomTextAppearance" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_label_layout"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/colorBlack"
+            android:textColorHint="@color/colorOffWhite"
+            app:hintTextAppearance="@style/CustomTextAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/register_head"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/colorBlack"
+                android:clickable="false"
+                android:hint="Password Label"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorDarkBlue"
+                android:textSize="20sp"
+                app:hintTextAppearance="@style/CustomTextAppearance" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_pass_layout"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_email_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/colorBlack"
+            android:textColorHint="@color/colorOffWhite"
+            app:hintTextAppearance="@style/CustomTextAppearance"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorOffWhite">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPass"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/register_head"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/colorBlack"
+                android:clickable="false"
+                android:hint="Enter Password"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorDarkBlue"
+                android:textSize="20sp"
+
+                app:hintTextAppearance="@style/CustomTextAppearance" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/savePass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cpass_layout"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="@color/colorDarkBlue"
+            android:text="@string/save_cont"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cpass_layout"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="200dp"
+            android:backgroundTint="@color/colorBlack"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkBlue"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mymanager">
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".PasswordReset"></activity>
+        <activity android:name=".RecordStored" />
+        <activity
+            android:name=".Displayer"
+            android:label="@string/data_secure" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".AccRecovery"
+            android:label="@string/recovery_pros" />
+        <activity
+            android:name=".AddPassDisplay"
+            android:label="@string/add_pass"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AddNoteDisplay"
+            android:label="@string/add_note"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AddUser"
+            android:label="@string/enter_detail"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name=".Authentication"
+            android:theme="@style/ActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

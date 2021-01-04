@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Trust Zone</string>
+    <string name="inst">Enter Your Details</string>
+    <string name="menu_pas">My Passwords</string>
+    <string name="menu_not">My Notes</string>
+    <string name="menu_set">Settings</string>
+    <string name="my_pass">My Passwords</string>
+    <string name="my_note">My Notes</string>
+    <string name="sett">Settings</string>
+    <string name="test">Test</string>
+    <string name="confirm_id">Confirm Your Identity</string>
+    <string name="details_enter">Enter Your Data</string>
+    <string name="auth">Enter Your Pin to Continue</string>
+    <string name="auth_reqd"> </string>
+    <string name="confirm">First Confirm it is you</string>
+    <string name="login">Please Enter your Details</string>
+    <string name="pass_d">Password:</string>
+    <string name="hint_fullname">Full Name</string>
+    <string name="hint_password">Enter a Password</string>
+    <string name="hint_phone">Phone No"</string>
+    <string name="hint_profession">Profession"</string>
+    <string name="hint_confirm_newpass">Confirm Password</string>
+
+    <string name="save_cont">Save</string>
+    <string name="enter_detail">Enter Your Details</string>
+    <string name="pass_reason">Password Label: </string>
+    <string name="email_add">Email Address</string>
+    <string name="pass_enter">Enter the Password</string>
+    <string name="add_note">Add your Note Details</string>
+    <string name="add_pass">Add your Password Details</string>
+    <string name="note_reason">Note Label: </string>
+    <string name="note">Notes:</string>
+    <string name="forgot_pass">Forgot Password?</string>
+    <string name="recover_number">Please Enter your Recovery Mobile Number</string>
+    <string name="blank"> </string>
+    <string name="recovery_pros">Recovery Process</string>
+    <string name="blank_info">No Information Available</string>
+    <string name="add_new_note">New Note</string>
+    <string name="add_new_pass">New Password</string>
+    <string name="refresh">Refresh</string>
+    <string name="cancel">Cancel</string>
+    <string name="data_secure">Secured Data</string>
+    <string name="default_profile_name">Profile Name</string>
+    <string name="account_details">account recovery and account details</string>
+    <string name="user_name">Name: </string>
+    <string name="user_phone">Recovery no: </string>
+    <string name="set_pass">Set-up a new password</string>
+    <string name="curr_pass">Current Password</string>
+    <string name="new_pass">New Password</string>
+    <string name="conf_new_pass">Confirm New Password</string>
+    <string name="new_pass_inst">Instructions for your new password:\n 1. Password should be of minimum 8 characters. \n 2. Atleast one alphabet [a–z] or [A–Z]. \n 3. Atleast one special character. \n 4. Atleast one number [0–9].</string>
+    <string name="privacy_note">Please note: The developer takes privacy very seriously!\nThe data you share with us (incl. notes and passwords) stay local on your device and is secured using adequate encryption techniques.</string>
+    <array name="sec_q">
+        <item>Select a Security Question</item>
+        <item>What Is your favorite book?</item>
+        <item>What is the name of the road you grew up on?</item>
+        <item>What is your mother’s maiden name?</item>
+        <item>What was the name of your first/current/favorite pet?</item>
+        <item>What was the first company that you worked for?</item>
+        <item>Where did you meet your spouse?</item>
+        <item>Where did you go to high school/college?</item>
+        <item>What is your favorite food?</item>
+        <item>What city were you born in?</item>
+        <item>Where is your favorite place to vacation?</item>
+    </array>
+    <string name="sec_q_a">Answer for Security Question</string>
+    <string name="rec_mode">Recovery Mode</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
