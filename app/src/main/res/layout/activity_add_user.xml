@@ -78,6 +78,8 @@
             android:layout_marginTop="35dp"
             android:layout_marginEnd="30dp"
             android:textColorHint="@color/colorWhite"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorOffWhite"
             app:hintTextAppearance="@style/CustomTextAppearance">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -114,6 +116,8 @@
             android:layout_marginTop="35dp"
             android:layout_marginEnd="30dp"
             android:textColorHint="@color/colorWhite"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorOffWhite"
             app:hintTextAppearance="@style/CustomTextAppearance">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -151,6 +155,7 @@
             android:layout_marginEnd="30dp"
             android:backgroundTint="@color/colorBlack"
             android:textColorHint="@color/colorWhite"
+
             app:hintTextAppearance="@style/CustomTextAppearance">
 
             <com.google.android.material.textfield.TextInputEditText

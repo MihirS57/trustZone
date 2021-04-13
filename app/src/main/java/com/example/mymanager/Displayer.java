@@ -371,73 +371,49 @@ public class Displayer extends AppCompatActivity
 
     public void displayPass()
     {
+        Fetch passObj = new Fetch(this,"password",index);
+        String label,email,pass,lastV,lastE;
+        label = passObj.getPasswordData( "label" );
+        email = passObj.getPasswordData( "email" );
+        pass = passObj.getPasswordData( "password" );
+        lastV = passObj.getPasswordData( "visited" );
+        lastE = passObj.getPasswordData( "edited" );
 
-        register[0] = "Log0";
-        register[1] = "Log1";
-        register[2] = "Log2";
-        register[3] = "Log3";
-        register[4] = "Log4";
-        register[5] = "Log5";
-        register[6] = "Log6";
-        register[7] = "Log7";
-        register[8] = "Log8";
-        register[9] = "Log9";
+        if(!(label.equals( "-1" ) && email.equals( "-1" ) && pass.equals( "-1" ) && lastV.equals( "-1" ) && lastE.equals( "-1" ))){
+            dup_email = email;
+            dup_label = label;
+            dup_pass = pass;
+            dup_lv = "You visited last at "+lastV;
+            dup_le = "You created/edited this at "+lastE;
+            Calendar c = Calendar.getInstance();
+            SimpleDateFormat sf = new SimpleDateFormat( "dd-MM-yyyy HH:mm:ss a", Locale.getDefault());
+            String t = sf.format( c.getTime() );
+            passObj.setColumnDataPass( "visited",t );
+            pass_thread.start();
+        }else{
 
-        String pass_key = "Signal";
-        String identity = "Signal_classifier";
-        String identity_label = "Label";
-        String e_tst_label = "eStamp";
-        String v_tst_label = "vStamp";
-        final String defa = "-1";
-
-        try {
-            String masterkeys = MasterKeys.getOrCreate( MasterKeys.AES256_GCM_SPEC );
-
-            SharedPreferences sharedPreferences = EncryptedSharedPreferences.create(
-                    register[index],
-                    masterkeys,
-                    getApplicationContext(),
-                    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-                    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM);
-
-            final String label = sharedPreferences.getString( identity_label,defa );
-            final String email = sharedPreferences.getString( identity,defa );
-            final String pass = sharedPreferences.getString( pass_key,defa );
-            final String lastV = sharedPreferences.getString( v_tst_label,defa );
-            final String lastE = sharedPreferences.getString( e_tst_label,defa );
-
-            if(!(label.equals( defa ) && email.equals( defa ) && pass.equals( defa )) )
-            {
-                dup_email = email;
-                dup_label = label;
-                dup_pass = pass;
-                dup_lv = "You visited last at "+lastV;
-                dup_le = "You created/edited this at "+lastE;
-                Calendar c = Calendar.getInstance();
-                SimpleDateFormat sf = new SimpleDateFormat( "dd-MM-yyyy HH:mm:ss a", Locale.getDefault());
-                String t = sf.format( c.getTime() );
-                sharedPreferences.edit().putString( v_tst_label,t ).apply();
-                pass_thread.start();
-            }
-            else
-            {
-                Toast.makeText( Displayer.this,"Unexpected Error Occurred",Toast.LENGTH_LONG ).show();
-            }
-
-        } catch (GeneralSecurityException | IOException e) {
-            e.printStackTrace();
         }
-
-
-        /*SharedPreferences sharedPreferences_1 = getSharedPreferences( register[index],MODE_PRIVATE );
-        final String label = sharedPreferences_1.getString(identity_label,defa);
-        final String email = sharedPreferences_1.getString(identity,defa);
-        final String pass = sharedPreferences_1.getString(pass_key,defa);*/
 
     }
 
     public void displayNotes()
     {
+        String label,note;
+        Fetch notesObj = new Fetch(this,"notes",index);
+        label = notesObj.getNoteData( "label" );
+        note = notesObj.getNoteData( "notes" );
+
+        if(!label.equals( "-1" ) && !note.equals( "-1" )){
+            dup_label = label;
+            dup_note = note;
+            notes_thread.start();
+        }else{
+
+        }
+
+
+        /*
+
         register_notes[0] = "Book0";
         register_notes[1] = "Book1";
         register_notes[2] = "Book2";
@@ -448,9 +424,11 @@ public class Displayer extends AppCompatActivity
         register_notes[7] = "Book7";
         register_notes[8] = "Book8";
         register_notes[9] = "Book9";
-        String label,note;
+
         String note_key = "Wave";
         String note_identity_label = "Wave_name";
+
+
 
         try {
             String masterkeys = MasterKeys.getOrCreate( MasterKeys.AES256_GCM_SPEC );
@@ -481,6 +459,8 @@ public class Displayer extends AppCompatActivity
             e.printStackTrace();
         }
 
+         */
+
 
     }
 
@@ -495,17 +475,6 @@ public class Displayer extends AppCompatActivity
             pass_disp = findViewById( R.id.disp_pass );
             pass_lv = findViewById( R.id.last_visit );
             pass_le = findViewById( R.id.last_edit );
-
-            /*register[0] = "Log0";
-            register[1] = "Log1";
-            register[2] = "Log2";
-            register[3] = "Log3";
-            register[4] = "Log4";
-            register[5] = "Log5";
-            register[6] = "Log6";
-            register[7] = "Log7";
-            register[8] = "Log8";
-            register[9] = "Log9";*/
 
             runOnUiThread( new Runnable() {
                 @Override

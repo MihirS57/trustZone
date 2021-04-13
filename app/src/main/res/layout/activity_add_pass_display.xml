@@ -44,11 +44,12 @@
                 android:backgroundTint="@color/colorBlack"
                 android:clickable="false"
                 android:hint="Confirm Password"
+                android:inputType="textPassword"
                 android:textAlignment="textStart"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorDarkBlue"
-                android:textSize="20sp"
 
+                android:textSize="20sp"
                 app:hintTextAppearance="@style/CustomTextAppearance" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -158,11 +159,12 @@
                 android:backgroundTint="@color/colorBlack"
                 android:clickable="false"
                 android:hint="Enter Password"
+                android:inputType="textPassword"
                 android:textAlignment="textStart"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorDarkBlue"
-                android:textSize="20sp"
 
+                android:textSize="20sp"
                 app:hintTextAppearance="@style/CustomTextAppearance" />
 
         </com.google.android.material.textfield.TextInputLayout>
