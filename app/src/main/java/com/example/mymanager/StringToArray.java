@@ -22,10 +22,10 @@ public class StringToArray {
         String buf="";
         int arr[] = new int[10];
         arr = toArray( inp );
-        if(mode != 0) {
+        if(mode != 0) { //add operation
             arr[ind] = ind + 1;
         }
-        else{
+        else{           // delete operation
             arr[ind] = 0;
         }
         buf = convertToString( arr );

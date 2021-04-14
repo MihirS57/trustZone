@@ -73,7 +73,7 @@ public class note_fragment extends Fragment {
             {
                 Log.e("Yes Notes","Notes");
                 int rc=record_stored;
-                for(int i = 0; rc>0;i++)
+                for(int i = 0; rc>0 && i<10 ;i++)
                 {
                     if(getNotes_label(i,0)!=null) {
                         if(getNotes_label( i,1 ).equals( "true" ))

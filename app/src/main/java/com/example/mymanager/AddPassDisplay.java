@@ -77,7 +77,6 @@ public class AddPassDisplay extends AppCompatActivity {
                         }
 
                     } else if (!pass.equals( confpass )) {
-                        //Toast.makeText(AddPassDisplay.this,"Passwords don't match",Toast.LENGTH_LONG).show();
                         new AlertDialog.Builder( AddPassDisplay.this )
                                 .setTitle( "Error!" )
                                 .setMessage( "Passwords don't match! Please check" )
@@ -105,6 +104,7 @@ public class AddPassDisplay extends AppCompatActivity {
     }
 
     public void editPass(int in){
+
             final Fetch passObj = new Fetch(context,"password",in);
             final String l = passObj.getPasswordData( "label" );
             final String e = passObj.getPasswordData( "email" );
@@ -129,11 +129,7 @@ public class AddPassDisplay extends AppCompatActivity {
                         SimpleDateFormat sf = new SimpleDateFormat( "dd-MM-yyyy HH:mm:ss a", Locale.getDefault() );
                         String t = sf.format( c.getTime() );
                         passObj.setPasswordData( li, ei, pi, t, t, "true" );
-                        if (index != -1) {
-                            Toast.makeText( AddPassDisplay.this, "Saved!", Toast.LENGTH_SHORT ).show();
-                        } else {
-                            Toast.makeText( context, "An Error occurred!", Toast.LENGTH_LONG ).show();
-                        }
+                        Toast.makeText( AddPassDisplay.this, "Saved!", Toast.LENGTH_SHORT ).show();
                     } else if (!pi.equals( cpi )) {
                         conf_input_pass.requestFocus();
                         conf_input_pass.setError( "Passwords dont match!" );

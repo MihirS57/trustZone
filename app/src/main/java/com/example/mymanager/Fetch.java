@@ -16,7 +16,7 @@ public class Fetch {
     String record_index = "iKey";
     String record_index_notes = "iKey_notes";
 
-    String occupy = "engage";
+    String occupy = "engage";   //common to both
     String e_tst_label = "eStamp";
     String v_tst_label = "vStamp";
 
@@ -278,6 +278,30 @@ public class Fetch {
         }
         return bus;
     }
+    public boolean setColumnDataPass(String mode,String data){
+
+        switch (mode){
+            case "label":
+                sharedPreferences.edit().putString( identity_label,data ).apply();
+                break;
+            case "email":
+                sharedPreferences.edit().putString( identity,data ).apply();
+                break;
+            case "password":
+                sharedPreferences.edit().putString( pass_key,data ).apply();
+                break;
+            case "visited":
+                sharedPreferences.edit().putString( v_tst_label,data ).apply();
+                break;
+            case "edited":
+                sharedPreferences.edit().putString( e_tst_label,data ).apply();
+                break;
+            case "occupy":
+                sharedPreferences.edit().putString( occupy,data ).apply();
+                break;
+        }
+        return true;
+    }
     public boolean setPasswordData(String label,String email,String password, String visited,String edited,String occupied)    //1:label, 2:email 3:password 4:visited 5:edited
     {
         sharedPreferences.edit().putString( identity_label,label )
@@ -288,7 +312,7 @@ public class Fetch {
         .putString( occupy,occupied ).apply();
         return true;
     }
-    public boolean setColumnDataPass(String mode,String data){
+    public boolean setColumnDataNote(String mode,String data){
         switch (mode){
             case "label":
                 sharedPreferences.edit().putString( note_identity_label,data ).apply();
@@ -317,7 +341,4 @@ public class Fetch {
         .putString( occupy,occupied ).apply();
         return true;
     }
-
-
-
 }

@@ -10,24 +10,6 @@ public class Pass
     Context context;
     int id;
 
-    /*String records = "nRecord";     //sp for records
-    String record_key = "nKey";     // no of password records
-    String record_index = "iKey";   //index of each password
-
-
-    String register[] = new String[10];
-    String pass_key = "Signal";
-    String identity = "Signal_classifier";
-    String identity_label = "Label";
-    String e_tst_label = "eStamp";
-    String v_tst_label = "vStamp";
-    String occupy = "engage";
-
-    String defa = "-1";
-    int def=-1;
-    int record_stored;*/
-
-
     public Pass( int ind, String pass_label, String emailA, String tst) {
         this.id = ind;
         this.pass_label = pass_label;
