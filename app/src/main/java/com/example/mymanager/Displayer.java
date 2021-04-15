@@ -47,7 +47,7 @@ public class Displayer extends AppCompatActivity
     Fetch passObj,noteObj,recordObj;
 
     TextView note_label_disp;
-    TextView note_disp;
+    TextView note_disp,note_lv,note_le;
 
     int mode;
     String index_key = "INDEX";
@@ -55,7 +55,7 @@ public class Displayer extends AppCompatActivity
 
 
     String dup_label,dup_email,dup_pass,dup_lv,dup_le;
-    String dup_note_label,dup_note;
+    String dup_note_label,dup_note,dup_note_lv,dup_note_le;
 
     BiometricPrompt biometricPrompt;
     @Override
@@ -308,14 +308,17 @@ public class Displayer extends AppCompatActivity
 
     public void displayNotes()
     {
-        String label,note;
+        String label,note,lastNV,lastNE;
         if(noteObj != null){
             label = noteObj.getNoteData( "label" );
             note = noteObj.getNoteData( "notes" );
-
+            lastNV = noteObj.getNoteData( "visited" );
+            lastNE = noteObj.getNoteData( "edited" );
             if(!label.equals( "-1" ) && !note.equals( "-1" )){
                 dup_note_label = label;
                 dup_note = note;
+                dup_note_lv = "You visited last at "+lastNV;
+                dup_note_le = "You created/edited this at "+lastNE;
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat sf = new SimpleDateFormat( "dd-MM-yyyy HH:mm:ss a", Locale.getDefault());
                 String t = sf.format( c.getTime() );
@@ -368,12 +371,15 @@ public class Displayer extends AppCompatActivity
             int finish;
             note_label_disp = findViewById( R.id.disp_noteslabel );
             note_disp = findViewById( R.id.disp_notes );
-
+            note_lv = findViewById( R.id.note_last_visit );
+            note_le = findViewById( R.id.note_last_edit );
             runOnUiThread( new Runnable() {
                 @Override
                 public void run() {
                     note_label_disp.setText( dup_note_label );
                     note_disp.setText( dup_note );
+                    note_lv.setText( dup_note_lv );
+                    note_le.setText( dup_note_le );
                 }
             } );
             finish = timer("n");

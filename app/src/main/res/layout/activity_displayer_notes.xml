@@ -83,6 +83,32 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.374" />
 
+        <TextView
+            android:id="@+id/note_last_visit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/disp_notes"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Your last visit at: "
+            android:textColor="@color/colorOffWhite"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/note_last_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/note_last_visit"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Your last edit/created at: "
+            android:textColor="@color/colorOffWhite"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
         <ProgressBar
             android:id="@+id/count_note"
             style="?android:attr/progressBarStyleHorizontal"

@@ -2,6 +2,7 @@ package com.example.mymanager;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.security.crypto.EncryptedSharedPreferences;
+import androidx.security.crypto.MasterKeys;
+
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.List;
 
 public class Notes_adapter extends RecyclerView.Adapter<Notes_adapter.NotesViewHolder>
@@ -64,12 +70,21 @@ public class Notes_adapter extends RecyclerView.Adapter<Notes_adapter.NotesViewH
 
                     //Toast.makeText(context,"You pressed: "+(getAdapterPosition()+1),Toast.LENGTH_LONG).show();
 
-                        Intent display = new Intent(temp,Displayer.class);
-                        display.putExtra(index_key,getAdapterPosition());
-                        display.putExtra(mode_key,0);
-                        temp.startActivity(display);
-
-
+                    int rec=-1,i=0,tem=0;
+                    String t="";
+                    Fetch recordObj = new Fetch( context,"records",0 );
+                    rec = recordObj.getNotePassRecords( "note" );
+                    t = recordObj.getNotePassIndex( "note" );
+                    while( !(getAdapterPosition()+1 == tem) && tem<=rec){
+                        if(t.charAt( i ) != '0'){
+                            tem++;
+                        }
+                        i++;
+                    }
+                    Intent display = new Intent(temp,Displayer.class);
+                    display.putExtra(index_key,i-1);
+                    display.putExtra(mode_key,0);
+                    temp.startActivity(display);
                 }
             });
 
