@@ -10,10 +10,15 @@ public class Notes
 {
     int id;
     String label_note;
-    String note;
+    String note, visited_ts;
     String tst;
     Context context;
-    public Notes(int i,String l)
+
+    public String getVisited_ts() {
+        return visited_ts;
+    }
+
+    public Notes(int i, String l)
     {
         this.id = i;
         this.label_note = l;
@@ -31,6 +36,12 @@ public class Notes
         this.note = note;
         this.tst = tst;
         this.context = context;
+    }
+
+    public Notes(int id,String label_note, String visited_ts) {
+        this.id = id;
+        this.label_note = label_note;
+        this.visited_ts = visited_ts;
     }
 
     public int getId() {

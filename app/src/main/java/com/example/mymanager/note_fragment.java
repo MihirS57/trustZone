@@ -78,7 +78,7 @@ public class note_fragment extends Fragment {
                     if(getNotes_label(i,0)!=null) {
                         if(getNotes_label( i,1 ).equals( "true" ))
                         {
-                            notesList.add(new Notes(i+1,getNotes_label(i,0)));
+                            notesList.add(new Notes(i+1,getNotes_label(i,0),getNotes_label( i,2 )));
                             rc--;
                         }
                     }
@@ -115,6 +115,7 @@ public class note_fragment extends Fragment {
         String note_identity_label = "Wave_name";
         String occupy = "engage";
         String note_label = null;
+        String v_tst_label = "vStamp";
 
         String label = null;
         try {
@@ -131,6 +132,9 @@ public class note_fragment extends Fragment {
             }
             else if(m==1){
                 note_label = sharedPreferences.getString( occupy,"-1" );
+            }else if(m == 2){
+                note_label = sharedPreferences.getString( v_tst_label,"-1" );
+                note_label = "You last visited at "+note_label;
             }
 
 

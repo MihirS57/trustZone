@@ -9,8 +9,7 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp
-"
+        android:layout_margin="5dp"
         app:cardBackgroundColor="@color/colorAccent"
         app:cardCornerRadius="10dp">
 
@@ -27,11 +26,24 @@
 
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="29dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/blank_info"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/label_notes_tstamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notes_pass"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="15dp"
+                android:text="Last Visited"
+                android:textColor="@color/colorOffWhite"
+                android:textStyle="italic" />
 
             <ImageView
                 android:id="@+id/imageView"

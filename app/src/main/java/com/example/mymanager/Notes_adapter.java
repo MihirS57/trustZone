@@ -34,7 +34,9 @@ public class Notes_adapter extends RecyclerView.Adapter<Notes_adapter.NotesViewH
     public void onBindViewHolder(@NonNull Notes_adapter.NotesViewHolder holder, int position) {
         Notes notes = notesList.get(position);
         String label = notes.getLabel_note();
+        String timeS = notes.getVisited_ts();
         holder.header.setText(label);
+        holder.timeS.setText( timeS );
     }
 
 
@@ -46,7 +48,7 @@ public class Notes_adapter extends RecyclerView.Adapter<Notes_adapter.NotesViewH
 
     public class NotesViewHolder extends RecyclerView.ViewHolder
     {
-        TextView header;
+        TextView header,timeS;
         String index_key = "INDEX";
         String mode_key = "MODE";
         Context temp;
@@ -54,6 +56,7 @@ public class Notes_adapter extends RecyclerView.Adapter<Notes_adapter.NotesViewH
             super(itemView);
 
             header = itemView.findViewById(R.id.notes_pass);
+            timeS = itemView.findViewById( R.id.label_notes_tstamp );
             temp = itemView.getContext();
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
