@@ -222,6 +222,7 @@ public class pass_fragment extends Fragment {
         else if(m == 1)
         {
             label = esharedPreferences.getString( identity,defa );
+            label = "***"+label.substring( 3 );
         }
         else if(m == 2)
         {

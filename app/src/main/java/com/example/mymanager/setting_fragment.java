@@ -27,10 +27,6 @@ public class setting_fragment extends Fragment {
     TextView prof_name;
     TextView rec_disp;
 
-    String pref = "Bundle";     //Personal Details
-    String name_key="Name";
-    String recovery_key="Recovery";
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,26 +47,12 @@ public class setting_fragment extends Fragment {
         adapter = new Settings_adapter( getContext(),settingList );
         recyclerView.setAdapter( adapter );
 
-        String masterkey = null;
+        Fetch userRec = new Fetch( getContext(),"userinfo",0 );
+        String userN = userRec.getUserInfo( "name" );
+        String userR = userRec.getUserInfo( "recovery" );
+        prof_name.setText( userN );
+        rec_disp.setText( userR );
 
-        try {
-            masterkey = MasterKeys.getOrCreate( MasterKeys.AES256_GCM_SPEC );
-
-            SharedPreferences sp_details = EncryptedSharedPreferences.create(
-                    pref,
-                    masterkey,
-                    v.getContext(),
-                    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-                    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM );
-
-            prof_name.setText( sp_details.getString( name_key,"-1" ) );
-            rec_disp.setText( "Recovery: "+sp_details.getString( recovery_key,"-1" ) );
-
-        } catch (GeneralSecurityException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         return v;
 
 

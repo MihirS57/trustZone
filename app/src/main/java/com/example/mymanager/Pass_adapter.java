@@ -86,6 +86,8 @@ public class Pass_adapter extends RecyclerView.Adapter<Pass_adapter.PassViewHold
         TextView pass_l;
         TextView email_l;
         TextView tstamp;
+        String index_key = "INDEX";
+        String mode_key = "MODE";
 
         public PassViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -99,47 +101,11 @@ public class Pass_adapter extends RecyclerView.Adapter<Pass_adapter.PassViewHold
                 @Override
                 public void onClick(View v) {
                     //Toast.makeText(context,"You pressed: "+(getAdapterPosition()+1),Toast.LENGTH_LONG).show();
-                    String index_key = "INDEX";
-                    String mode_key = "MODE";
-
-                    String records = "nRecord";
-                    String record_key = "nKey";
-                    String record_index = "iKey";
                     int rec=-1,i=0,tem=0;
-                    String masterkeys,t="";
-                    try {
-                        masterkeys = MasterKeys.getOrCreate( MasterKeys.AES256_GCM_SPEC );
-                        SharedPreferences sharedPreferences1 = EncryptedSharedPreferences.create(
-                                records,
-                                masterkeys,
-                                context,
-                                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-                                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM);
-
-                        rec = sharedPreferences1.getInt( record_key,-1 );
-                        t=sharedPreferences1.getString( record_index,"-1" );
-
-                    } catch (GeneralSecurityException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    /*
-                    int arr[];
-                    int noOfRecords = from record's shared preferences
-
-                    for(i=0;nor>0;i++){
-                        if(getAdapterPosition()+1 == temp){
-                            break;
-                        } else if(arr[i] != 0){
-                            nor--;
-                            temp++;
-                         }
-
-                    }
-                    final_index = i-1;
-                     */
+                    String t="";
+                    Fetch recordObj = new Fetch( context,"records",0 );
+                    rec = recordObj.getNotePassRecords( "password" );
+                    t = recordObj.getNotePassIndex( "password" );
                     while( !(getAdapterPosition()+1 == tem) && tem<=rec){
                         if(t.charAt( i ) != '0'){
                             tem++;

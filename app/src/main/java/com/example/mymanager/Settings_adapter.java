@@ -65,7 +65,11 @@ public class Settings_adapter extends RecyclerView.Adapter<Settings_adapter.Sett
                     if(getAdapterPosition() == 0){
                         Intent record = new Intent(context,RecordStored.class);
                         context.startActivity( record );
-                    } else if(getAdapterPosition() == 3){
+                    } else if(getAdapterPosition() == 1){
+                        Intent logs = new Intent(context,SystemLogs.class);
+                        context.startActivity( logs );
+                    }
+                    else if(getAdapterPosition() == 3){
                         Intent new_pass = new Intent(context,PasswordReset.class);
                         context.startActivity( new_pass );
                     }

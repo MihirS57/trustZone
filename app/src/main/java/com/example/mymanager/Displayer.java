@@ -88,6 +88,8 @@ public class Displayer extends AppCompatActivity
                     @Override
                     public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                         super.onAuthenticationSucceeded( result );
+                            DatabaseAdapter dba = new DatabaseAdapter( Displayer.this );
+                            long id = dba.insertData( "Authentication Successful","Password Log IN","-","-" );
                             passObj = new Fetch( Displayer.this,"password",index );
                             displayPass();
                     }
@@ -95,6 +97,8 @@ public class Displayer extends AppCompatActivity
                     @Override
                     public void onAuthenticationFailed() {
                         super.onAuthenticationFailed();
+                        DatabaseAdapter dba = new DatabaseAdapter( Displayer.this );
+                        long id = dba.insertData( "Authentication Failed","Password Log IN","-","-" );
                         biometricPrompt.cancelAuthentication();
                         Displayer.this.finish();
                     }
@@ -131,6 +135,8 @@ public class Displayer extends AppCompatActivity
                     @Override
                     public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                         super.onAuthenticationSucceeded( result );
+                        DatabaseAdapter dba = new DatabaseAdapter( Displayer.this );
+                        long id = dba.insertData( "Authentication Successful","Note Log IN","-","-" );
                         noteObj = new Fetch( Displayer.this,"note",index );
                         displayNotes();
 
@@ -139,6 +145,8 @@ public class Displayer extends AppCompatActivity
                     @Override
                     public void onAuthenticationFailed() {
                         super.onAuthenticationFailed();
+                        DatabaseAdapter dba = new DatabaseAdapter( Displayer.this );
+                        long id = dba.insertData( "Authentication Failed","Note Log IN","-","-" );
                         biometricPrompt.cancelAuthentication();
                         Displayer.this.finish();
                     }
@@ -195,10 +203,7 @@ public class Displayer extends AppCompatActivity
                 break;
 
             case R.id.delete_info:
-                final String records = "nRecord";
-                final String record_key_notes = "nKey_notes";
-                final String record_key = "nKey";
-                final String record_index = "iKey";
+
                 final int def=-1;
                 recordObj = new Fetch( Displayer.this,"records",0 );
                 if((notes_thread.isAlive() && mode==0) || (pass_thread.isAlive() && mode==1)) {
@@ -212,6 +217,7 @@ public class Displayer extends AppCompatActivity
                                     public void onClick(DialogInterface dialog, int which) {
                                         notes_thread.interrupt();
 
+                                        String note_label=noteObj.getNoteData( "label" );
                                         noteObj.setNoteData( "","","","","false" );
 
                                         if(recordObj != null){
@@ -223,6 +229,9 @@ public class Displayer extends AppCompatActivity
                                             if(record_stored != def) {
                                                 recordObj.setNotePassRecords( "note",record_stored-1 );
                                             }
+                                            DatabaseAdapter dba = new DatabaseAdapter( Displayer.this );
+                                            long id = dba.insertData( "Note Deleted",note_label,"Yes","Yes" );
+
                                         }else{
                                             Log.e("NOTES RECORD","Record sp is null");
                                         }
@@ -241,7 +250,7 @@ public class Displayer extends AppCompatActivity
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         pass_thread.interrupt();
-
+                                        String pass_label = passObj.getPasswordData( "label" );
                                         passObj.setPasswordData( "","","","","","false" );
 
                                         if(recordObj != null){
@@ -253,6 +262,8 @@ public class Displayer extends AppCompatActivity
                                             if(record_stored != def) {
                                                 recordObj.setNotePassRecords( "password",record_stored-1 );
                                             }
+                                            DatabaseAdapter dba = new DatabaseAdapter( Displayer.this );
+                                            long id = dba.insertData( "Password Deleted",pass_label,"Yes","Yes" );
 
                                         }else{
                                             Log.e("PASS RECORD","Record sp is null");
@@ -297,6 +308,8 @@ public class Displayer extends AppCompatActivity
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat sf = new SimpleDateFormat( "dd-MM-yyyy HH:mm:ss a", Locale.getDefault());
                 String t = sf.format( c.getTime() );
+                DatabaseAdapter dba = new DatabaseAdapter( Displayer.this );
+                long id = dba.insertData( "Password Display",label,"Yes","-" );
                 passObj.setColumnDataPass( "visited",t );
                 pass_thread.start();
             }else{
@@ -322,6 +335,8 @@ public class Displayer extends AppCompatActivity
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat sf = new SimpleDateFormat( "dd-MM-yyyy HH:mm:ss a", Locale.getDefault());
                 String t = sf.format( c.getTime() );
+                DatabaseAdapter dba = new DatabaseAdapter( Displayer.this );
+                long id = dba.insertData( "Note Display",label,"Yes","-" );
                 noteObj.setColumnDataPass( "visited",t );
                 notes_thread.start();
             }else{

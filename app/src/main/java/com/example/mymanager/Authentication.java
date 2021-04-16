@@ -101,7 +101,7 @@ public class Authentication extends AppCompatActivity {
                                     //lock_stats = findViewById(R.id.lock_status);
                                     String pref = "Bundle";
                                     String pass_key = "Code";
-
+                                    DatabaseAdapter dba = new DatabaseAdapter( Authentication.this );
                                     String masterkey = null;
 
                                     try {
@@ -116,6 +116,9 @@ public class Authentication extends AppCompatActivity {
                                                     EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM );
                                             String def = "-1";
                                             if (sp_check.getString( pass_key, def ).equals( pass_enter.getText().toString() )) {
+
+                                                long id = dba.insertData( "Authentication Successful","Log In","-","-" );
+                                                //Toast.makeText( Authentication.this, "ID: "+id, Toast.LENGTH_SHORT ).show();
                                                 pass_try.edit().putInt( num,4 ).apply();
                                                 warn.setText( "" );
                                                 stats.setImageDrawable( getResources().getDrawable( R.color.colorBlack, null ) );
@@ -128,6 +131,7 @@ public class Authentication extends AppCompatActivity {
                                                 Log.d( "MyWrongPassword", "ElsePartExecuted" );
                                                 n = n - 1;
                                                 pass_try.edit().putInt( num, n ).apply();
+                                                long id = dba.insertData( "Authentication Failed","Log In","-","-" );
                                                 if (n <= 0) {
                                                     pass_try.edit().putBoolean( time, true ).apply();
                                                     Log.d( "MyExecuteNoChances", "ChancesExhausted" );

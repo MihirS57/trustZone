@@ -65,14 +65,17 @@ public class AddPassDisplay extends AppCompatActivity {
                     String t = sf.format( c.getTime() );
                     Fetch recordObj = new Fetch(context,"records",0);
                     record_stored = recordObj.getNotePassRecords( "password" );
+                    DatabaseAdapter dba = new DatabaseAdapter( AddPassDisplay.this );
 
                     if (record_stored != def && pass.equals( confpass )) {
 
                         index = new Pass( name, email, pass,t, context ).storeInfo(  );
 
                         if (index != -1) {
+                            long id = dba.insertData( "New Password Stored",name,"Yes","Yes" );
                             Toast.makeText( AddPassDisplay.this, "Password Stored!", Toast.LENGTH_SHORT ).show();
                         } else {
+                            long id = dba.insertData( "Error Occurred","New Password","Yes","No" );
                             Toast.makeText( context, "An Error occurred!", Toast.LENGTH_LONG ).show();
                         }
 
@@ -114,7 +117,7 @@ public class AddPassDisplay extends AppCompatActivity {
             input_email.setText( e );
             input_pass.setText( p );
             conf_input_pass.setText( p );
-
+            final DatabaseAdapter dba = new DatabaseAdapter( AddPassDisplay.this );
             save = findViewById(R.id.savePass );
             save.setOnClickListener( new View.OnClickListener() {
                 @Override
@@ -129,6 +132,7 @@ public class AddPassDisplay extends AppCompatActivity {
                         SimpleDateFormat sf = new SimpleDateFormat( "dd-MM-yyyy HH:mm:ss a", Locale.getDefault() );
                         String t = sf.format( c.getTime() );
                         passObj.setPasswordData( li, ei, pi, t, t, "true" );
+                        long id = dba.insertData( "Password Edit Saved",li,"Yes","Yes" );
                         Toast.makeText( AddPassDisplay.this, "Saved!", Toast.LENGTH_SHORT ).show();
                     } else if (!pi.equals( cpi )) {
                         conf_input_pass.requestFocus();
